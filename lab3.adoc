@@ -1,0 +1,130 @@
+:icons: font
+:toc: left
+
+= Lab 3 - Data Modeler
+
+Business rules and processes act on business objects. Business analysts and developers can use the Data Modeler in the BPMS workbench to create the object model that will be used to express business rules and processes.
+
+== Goals
+In this lab, we'll use the Data Modeler to create the data model that will be used for rules processing and process execution in subsequent labs.
+
+== 1. Data Modeler
+
+1. Login to BPMS workbench as user `jboss` and password `Redhat1!`.
+
+2. Select `Authoring -> Project Authoring` from the main menu, and select the `policyquote` Project. Navigate to the package `org.acme.insurance`
++
+image:images/lab3_1_quote_project.png[] +
+We will create our object model in this package.
+
+3. Select `New Item -> Data Object` from the menu +
+image:images/lab3_2_new_data_object.png[] +
+and fill in the following: +
+* Data Object - Driver
+* Package - org.acme.insurance
+* Leave `Persistable` unchecked +
+and click `OK` + 
+image:images/lab3_3_new_driver.png[] +
+
+4. From the editor click on `Add Field` + 
+image:images/lab3_4_add_field.png[] +
+and create a field as follow: +
+* Identifier - name
+* Label - name
+* Type - String
+* Leave `List` unchecked +
+and click `Create` +
+image:images/lab3_5_name_field.png[]
+
+5. Observe that the `name` field is created for the `Driver` object +
+image:images/lab3_6_name_created.png[]
+
+== 2. Create other fields
+
+1. Using the same steps, create the other fields for the Driver object 
++
+[cols=3*, options="header,autowidth"]
+|===
+| Identifier | Label | Type
+| age | age | Integer
+| drivingExperience | years of driving experience | Integer
+| numberOfAccidents | number of accidents | Integer
+| numberOfDemeritPoints | number of demerit points | Integer
+| state | state of residence | String
+|===
++
+TIP: You can use the `Create and continue` button to create multiple fields quickly
++
+2. Upon completion, the Driver object should look like this
++
+image:images/lab3_7_driver_completed.png[] +
++
+3. Click of `Save` to save the completed object.
+
+== 3. Create other objects
+
+1. Create `Vehicle` object in the same package (`org.acme.insurance`) with the following fields
++
+[cols=3*, options="header,autowidth"]
+|===
+| Identifier | Label | Type
+| hasDaytimeRunningLights | equipped with daytime running lights | Boolean
+| make | make | String
+| marketValue | market value | Integer
+| yom | year of manufacture | Integer
+| yearlyMileage | yearly mileage | Integer
+|===
+
+2. Create `Coverage` object in the same package (`org.acme.insurance`) with the following fields
++
+[cols=3*, options="header,autowidth"]
+|===
+| Identifier | Label | Type
+| type | type | String
+| excess | excess | Integer
+| limit | limit | Integer
+| premium | premium | Double
+|===
+
+3. Create `Rejection` object in the same package (`org.acme.insurance`) with the following fields
++
+[cols=3*, options="header,autowidth"]
+|===
+| Identifier | Label | Type
+| reason | reason| String
+|===
+
+4. So far the objects created uses Java primitive types. As you may have noticed from the UI, a field can also be a complex object and/or a collection (list). Now, create the `Policy` object. It will have a vehicle and a primary driver
++
+[cols=3*, options="header,autowidth"]
+|===
+| Identifier | Label | Type
+| vehicle | vehicle| org.acme.insurance.Vehicle
+| driver | driver | org.acem.insurance.Driver
+|===
++
+5. In addition, the there maybe zero or more additional drivers. Create a field `additionalDrivers` which is a `List` of `Drivers` (ensure you check the `List` checkbox):
++
+image:images/lab3_8_additional_drivers.png[] +
+
+6. Similarly, create the list fields for coverages and rejections
++
+[cols=3*, options="header,autowidth"]
+|===
+| Identifier | Label | Type
+| coverages | list of coverages | org.acme.insurance.Coverage [List]
+| rejection | list of rejections | org.acme.insurance.Rejection [List]
+|===
++
+When completed, the Policy object should look like this:
++
+image:images/lab3_9_policy.png[] +
++
+NOTE: Remember to `Save` all the objects you've create.
+
+7. At this point, five (5) object are created. Select any one of them and click you `Source` on the editor panel. You will see that Java code is generated for the objects we've created
++
+image:images/lab3_10_java_code.png[] +
+
+
+Congratulations, you have successfully created the object model using the Data Modeler. These objects will be used in our rules and processes in following labs. 
