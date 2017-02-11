@@ -1,4 +1,4 @@
-package org.acme.insurance.policyquote.eligibility;
+package org.acme.insurance.eligibility;
 
 import static org.junit.Assert.assertEquals;
 

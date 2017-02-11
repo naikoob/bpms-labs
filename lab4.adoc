@@ -201,7 +201,7 @@ DRL is a language used to express business rules in JBoss BRMS/BPMS. DRL typical
 
 We will now write a few rules to determine the driver is eligible for insurance coverage. We will first create a package named `eligibility` for all eligibility rules, followed by a simple rule to reject policy application where the age of the driver is less then 17.
 
-1. Create eligibility resource folder. On the JBDS Project Explorer, right click on `src/main/resources/ -> org/acme/insurance/policyquote` and select `New -> Folder`
+1. Create eligibility resource folder. On the JBDS Project Explorer, right click on `src/main/resources/ -> org/acme/insurance` and select `New -> Folder`
 +
 image:images/lab4_3_new_folder.png[] +
 +
@@ -215,14 +215,14 @@ image:images/lab4_4_new_rule_resource.png[] +
 3. Create new rule file with the following information: +
 * File name : minimum age
 * Type of rule resource : New Rule (individual rule)
-* Rule package name : org.acme.insurance.policyquote.eligibility
+* Rule package name : org.acme.insurance.eligibility
 +
 image:images/lab4_5_min_age.png[] +
 
 4. Replace the content of `minimum-age.drl` with the following: +
 +
 ----
-package org.acme.insurance.policyquote.eligibility
+package org.acme.insurance.eligibility
 
 import org.acme.insurance.Policy
 
@@ -239,9 +239,9 @@ end
 
 1. In the project explorer of JBDS, navigate to `src/test/java`.
 
-2. Right click on `org.acme.insurance.policyquote` and create a new JUnit test case. +
+2. Right click on `org.acme.insurance.eligibility` and create a new JUnit test case. +
 * Source folder : policyquote/src/test/java
-* Package : org.acme.insurance.policyquote.eligibility
+* Package : org.acme.insurance.eligibility
 * Name : EligibilityRulesTest
 +
 image:images/lab4_6_new_junit.png[] +
@@ -250,7 +250,7 @@ image:images/lab4_6_new_junit.png[] +
 +
 [source,java]
 ----
-package org.acme.insurance.policyquote.eligibility;
+package org.acme.insurance.eligibility;
 
 import static org.junit.Assert.*;
 
@@ -338,7 +338,7 @@ Now, try to write a few more eligibility rules and unit test using the `minimum-
 
 1. Reject policy if the driver's age is over 96 years old
 2. Reject policy if the driver has more then 5 accidents 
-3. Reject policy if the vehicle's yearly mileage is more then 150,000
+3. Reject policy if the vehicle's yearly mileage is more then 120,000 KM
 
 
 === 8. Commit and Push Changes
@@ -355,7 +355,7 @@ IMPORTANT: Make sure you do not commit and push the modified pom.xml file to you
 +
 image:images/lab4_8_commit.png[] 
 
-4. Open the BPMS Workbench from a browser, and select `Authoring -> Project Authoring`. Navigate to the  `org.acme.insurance.policyquote.eligibility` package. You should see the DRL rules you've just pushed from the Developer Studio.
+4. Open the BPMS Workbench from a browser, and select `Authoring -> Project Authoring`. Navigate to the  `org.acme.insurance.eligibility` package. You should see the DRL rules you've just pushed from the Developer Studio.
 +
 image:images/lab4_9_drl_in_workbench.png[]
 
