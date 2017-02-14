@@ -3,9 +3,11 @@
 
 = Lab 6 - Test Scenario
 
+When developing rules using the JBoss Developer Studio, we use JUnit to unit test rules. On the BPM Suite Workbench, we can create Test Scenarios for the same purpose. In this lab, we'll create test scenarios for the guided rules we created in the previous lab.
+
 === Goal
 
-When developing rules using the JBoss Developer Studio, we use JUnit to unit test rules. On the BPM Suite Workbench, we can create Test Scenarios for the same purpose. In this lab, we'll create test scenarios for the guided rules we created in the previous lab.
+Create test scenarios using BPM Suite.
 
 === 1. High Risk Driver Test
 
