@@ -30,7 +30,7 @@ image:images/lab3_3_new_driver.png[] +
 image:images/lab3_4_add_field.png[] +
 and create a field as follow: +
 * Identifier - name
-* Label - name
+* Label - Name
 * Type - String
 * Leave `List` unchecked +
 and click `Create` +
@@ -46,11 +46,11 @@ image:images/lab3_6_name_created.png[]
 [cols=3*, options="header,autowidth"]
 |===
 | Identifier | Label | Type
-| age | age | Integer
-| drivingExperience | years of driving experience | Integer
-| numberOfAccidents | number of accidents | Integer
-| numberOfDemeritPoints | number of demerit points | Integer
-| state | state of residence | String
+| age | Age | Integer
+| drivingExperience | Years of driving experience | Integer
+| numberOfAccidents | Number of accidents (last 3 years) | Integer
+| numberOfDemeritPoints | Number of demerit points | Integer
+| province | Province of residence | String
 |===
 +
 TIP: You can use the `Create and continue` button to create multiple fields quickly
@@ -68,11 +68,11 @@ image:images/lab3_7_driver_completed.png[] +
 [cols=3*, options="header,autowidth"]
 |===
 | Identifier | Label | Type
-| hasDaytimeRunningLights | equipped with daytime running lights | Boolean
-| make | make | String
-| marketValue | market value | Integer
-| yom | year of manufacture | Integer
-| yearlyMileage | yearly mileage | Integer
+| hasDaytimeRunningLights | Has daytime running lights | Boolean
+| make | Make | String
+| marketValue | Market value | Integer
+| yom | Year of manufacture | Integer
+| annualMileage | Annual mileage | Integer
 |===
 
 2. Create `Coverage` object in the same package (`org.acme.insurance`) with the following fields
@@ -80,10 +80,10 @@ image:images/lab3_7_driver_completed.png[] +
 [cols=3*, options="header,autowidth"]
 |===
 | Identifier | Label | Type
-| type | type | String
-| excess | excess | Integer
-| limit | limit | Integer
-| premium | premium | Double
+| type | Type | String
+| excess | Excess | Integer
+| limit | Limit | Integer
+| premium | Premium | Double
 |===
 
 3. Create `Rejection` object in the same package (`org.acme.insurance`) with the following fields
@@ -91,10 +91,21 @@ image:images/lab3_7_driver_completed.png[] +
 [cols=3*, options="header,autowidth"]
 |===
 | Identifier | Label | Type
-| reason | reason| String
+| reason | Reason| String
 |===
 
-4. So far the objects created uses Java primitive types. As you may have noticed from the UI, a field can also be a complex object and/or a collection (list). Now, create the `Policy` object. It will have a vehicle and a primary driver
+4. Create `Adjustment` object in the same package (`org.acme.insurance`) with the following fields
++
+[cols=3*, options="header,autowidth"]
+|===
+| Identifier | Label | Type
+| type | Type| String
+| unit | Unit | String
+| amount | Amount | Double
+| description | Description | String
+|===
++
+5. So far the objects created uses Java primitive types. As you may have noticed from the UI, a field can also be a complex object and/or a collection (list). Now, create the `Policy` object. It will have a vehicle and a primary driver
 +
 [cols=3*, options="header,autowidth"]
 |===
@@ -103,26 +114,36 @@ image:images/lab3_7_driver_completed.png[] +
 | driver | driver | org.acem.insurance.Driver
 |===
 +
-5. In addition, the there maybe zero or more additional drivers. Create a field `additionalDrivers` which is a `List` of `Drivers` (ensure you check the `List` checkbox):
+6. In addition, the there maybe zero or more additional drivers. Create a field `additionalDrivers` which is a `List` of `Drivers` (ensure you check the `List` checkbox):
 +
 image:images/lab3_8_additional_drivers.png[] +
 
-6. Similarly, create the list fields for coverages and rejections
+7. Similarly, create the list fields for coverages, rejections and adjustments
 +
 [cols=3*, options="header,autowidth"]
 |===
 | Identifier | Label | Type
-| coverages | list of coverages | org.acme.insurance.Coverage [List]
-| rejection | list of rejections | org.acme.insurance.Rejection [List]
+| coverages | List of coverages | org.acme.insurance.Coverage [List]
+| rejection | List of rejections | org.acme.insurance.Rejection [List]
+| adjustment | List of adjustments | org.acme.insurance.Adjustment [List]
 |===
 +
+Complete the `Policy` object with the following fields
++
+[cols=3*, options="header,autowidth"]
+|===
+| Identifier | Label | Type
+| basePrice | Base price | Double
+| finalPrice | Final price | Double
+|===
+
 When completed, the Policy object should look like this:
 +
 image:images/lab3_9_policy.png[] +
 +
 NOTE: Remember to `Save` all the objects you've create.
 
-7. At this point, five (5) object are created. Select any one of them and click you `Source` on the editor panel. You will see that Java code is generated for the objects we've created
+8. At this point, six (6) object are created. Select any one of them and click you `Source` on the editor panel. You will see that Java code is generated for the objects we've created
 +
 image:images/lab3_10_java_code.png[] +
 

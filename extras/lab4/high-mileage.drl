@@ -1,0 +1,13 @@
+package org.acme.insurance.eligibility
+
+import org.acme.insurance.Vehicle
+import org.acme.insurance.Policy
+
+rule "high mileage"
+    when
+        p : Policy ()
+        v : Vehicle (this == p.vehicle, annualMileage > 120000)
+    then
+        p.addRejection ("Vehicle annual mileage exceeded maximum allowed");
+
+end

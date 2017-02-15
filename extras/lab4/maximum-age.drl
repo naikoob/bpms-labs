@@ -1,0 +1,13 @@
+package org.acme.insurance.eligibility
+
+import org.acme.insurance.Driver
+import org.acme.insurance.Policy
+
+rule "maximum age"
+    when
+        p : Policy ()
+        d : Driver (this == p.driver, age > 96)
+    then
+        p.addRejection ("Driver exceeded maximum age limit");
+
+end

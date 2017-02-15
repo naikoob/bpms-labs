@@ -1,0 +1,19 @@
+= BPMS Training Labs
+
+==== link:lab0.html[Lab 0 - Environment Setup]
+
+==== link:lab1.html[Lab 1 - First Project]
+
+==== link:lab2.html[Lab 2 - Knowledge Asset Management]
+
+==== link:lab3.html[Lab 3 - Data Modeler]
+
+==== link:lab4.html[Lab 4 - DRL Rules]
+
+==== link:lab5.html[Lab 5 - Guided Rule Editor]
+
+==== link:lab6.html[Lab 6 - Test Scenario]
+
+==== link:lab7.html[Lab 7 - Decision Tables]
+
+==== link:lab8.html[Lab 8 - TBD]

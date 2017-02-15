@@ -45,70 +45,103 @@ public class EligibilityRulesTest {
 		Policy policy = new Policy();
 		policy.setDriver(driver);
 		policy.setVehicle(vehicle);
-		
+
 		// insert objects into working memory
 		FactHandle policyFH = ksession.insert(policy);
+		FactHandle driverFH = ksession.insert(driver);
+		FactHandle vehicleFH = ksession.insert(vehicle);
+
 		ksession.fireAllRules();
-		ksession.delete(policyFH);
 
 		System.out.println(policy);
 		assertEquals(policy.getRejections().size(), 1);
+		
+		ksession.delete(policyFH);
+		ksession.delete(driverFH);
+		ksession.delete(vehicleFH);
 	}
 
 	@Test
 	public void maxAgeTest() {
 		// now create some test data
 		Driver driver = new Driver();
-		driver.setAge(99);
+		driver.setAge(97);
+
+		Vehicle vehicle = new Vehicle();
+		
 		Policy policy = new Policy();
 		policy.setDriver(driver);
-		Vehicle vehicle = new Vehicle();
-		policy.setVehicle(vehicle);	
+		policy.setVehicle(vehicle);
+
 		// insert objects into working memory
 		FactHandle policyFH = ksession.insert(policy);
+		FactHandle driverFH = ksession.insert(driver);
+		FactHandle vehicleFH = ksession.insert(vehicle);
+
 		ksession.fireAllRules();
-		ksession.delete(policyFH);
 
 		System.out.println(policy);
 		assertEquals(policy.getRejections().size(), 1);
+		
+		ksession.delete(policyFH);
+		ksession.delete(driverFH);
+		ksession.delete(vehicleFH);
 	}
 
 	@Test
-	public void maxAccidentTest() {
+	public void tooManyAccidentsTest() {
 		// now create some test data
 		Driver driver = new Driver();
 		driver.setNumberOfAccidents(6);
+
+		Vehicle vehicle = new Vehicle();
+		
 		Policy policy = new Policy();
 		policy.setDriver(driver);
-		Vehicle vehicle = new Vehicle();
-		policy.setVehicle(vehicle);	
+		policy.setVehicle(vehicle);
+
 		// insert objects into working memory
 		FactHandle policyFH = ksession.insert(policy);
+		FactHandle driverFH = ksession.insert(driver);
+		FactHandle vehicleFH = ksession.insert(vehicle);
+
 		ksession.fireAllRules();
-		ksession.delete(policyFH);
 
 		System.out.println(policy);
 		assertEquals(policy.getRejections().size(), 1);
+		
+		ksession.delete(policyFH);
+		ksession.delete(driverFH);
+		ksession.delete(vehicleFH);
 	}
 
 	@Test
-	public void maxMileageTest() {
+	public void highMileageTest() {
 		// now create some test data
 		Driver driver = new Driver();
+
+		Vehicle vehicle = new Vehicle();
+		vehicle.setAnnualMileage(120001);
+		
 		Policy policy = new Policy();
 		policy.setDriver(driver);
-		Vehicle vehicle = new Vehicle();
-		vehicle.setYearlyMileage(170000);
 		policy.setVehicle(vehicle);
+
 		// insert objects into working memory
 		FactHandle policyFH = ksession.insert(policy);
+		FactHandle driverFH = ksession.insert(driver);
+		FactHandle vehicleFH = ksession.insert(vehicle);
+
 		ksession.fireAllRules();
-		ksession.delete(policyFH);
 
 		System.out.println(policy);
 		assertEquals(policy.getRejections().size(), 1);
+		
+		ksession.delete(policyFH);
+		ksession.delete(driverFH);
+		ksession.delete(vehicleFH);
 	}
-
+	
 	@AfterClass
 	public static void closeKsession() {
 		try {

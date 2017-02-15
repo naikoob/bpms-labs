@@ -1,0 +1,13 @@
+package org.acme.insurance.eligibility
+
+import org.acme.insurance.Driver
+import org.acme.insurance.Policy
+
+rule "too many accidents"
+    when
+        p : Policy ()
+        d : Driver (this == p.driver, numberOfAccidents > 5)
+    then
+        p.addRejection ("Driver has too many accidents");
+
+end

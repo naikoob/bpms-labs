@@ -24,7 +24,7 @@ Once the project is checked out, we'll make a few modifications and push the cha
 +
 image:images/lab2_1_ssh_url.png[]
 +
-This is the base Git url using SSH protocol. We can append a specific user by adding the `userid@` before the hostname. For example: `ssh://jboss@localhost:8001/insurance`
+This is the base Git url using SSH protocol. We can append a specific user by adding the `userid@` before the hostname. For example: `ssh://jboss@localhost:8001/insurance` or `ssh://jboss@127.0.0.1:8001/insurance`
 
 3. Start JBoss Developer Studio
 
@@ -36,7 +36,7 @@ image:images/lab2_2_new_jbds_project.png[]
 +
 image:images/lab2_3_new_project_wizard.png[]
 +
-6. In SCM URL, select `git` and enter the SSH url from step 2 above (for example: `ssh://jboss@localhost:8001/insurance`). Remember to prepend the userid you use to connect to Business Central to the hostname.
+6. In SCM URL, select `git` and enter the SSH url from step 2 above (for example: `ssh://jboss@127.0.0.1:8001/insurance`). Remember to prepend the userid you use to connect to Business Central to the hostname.
 +
 image:images/lab2_4_new_project_wizard_2.png[]
 +

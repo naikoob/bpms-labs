@@ -5,11 +5,11 @@
 
 When developing rules using the JBoss Developer Studio, we use JUnit to unit test rules. On the BPM Suite Workbench, we can create Test Scenarios for the same purpose. In this lab, we'll create test scenarios for the guided rules we created in the previous lab.
 
-=== Goal
+== Goal
 
 Create test scenarios using BPM Suite.
 
-=== 1. High Risk Driver Test
+== 1. High Risk Driver Test
 
 1. In the `org.acme.insurance.eligibility` package, select `New Item -> Test Scenario`
 +
@@ -19,57 +19,57 @@ image:images/lab6_1_new_test_scenario.png[] +
 +
 image:images/lab6_2_import_objects.png[] +
 
-3. Switch back to `Editor` tab. Click on the `+` icon beside `Given` and add a `Policy` fact, with the name `policy`
+3. Switch back to `Editor` tab. Click on the `+` icon beside `Given` and add a `Policy` fact, with the name `policy`, and a `Driver` fact with the name `driver`
 +
-image:images/lab6_3_new_input.png[] +
+image:images/lab6_3_new_input_1.png[] +
++
+image:images/lab6_4_new_input_2.png[] +
 
-4. Click on `Add a field`
-+
-image:images/lab6_4_add_field.png[] +
-+
-and add `driver`
+4. Click on `Add a field` under the `driver` and add `driver`
 +
 image:images/lab6_5_add_driver.png[] +
 
-5. Click on `Insert Policy` and add `vehicle` field as well. The test scenario editor now looks like this:
+5. Click on the pencil icon next to `driver` and select `Bound Variable` in the pop-up, and bind the to `=driver`
 +
-image:images/lab6_6_checkpoint.png[] +
+image:images/lab6_6_bound_variable.png[] +
 
-6. Click on the pencil icon next to `driver` field and select `Create new fact` in the pop up. Similarly, click on pencil icon next to `vehicle` and select `Create new fact`. The test scenario now looks likes this:
+6. Now we add constraints to the `driver` object. Click on `Insert Driver` and add the fields `numberOfAccidents` and `numberOfDemeritPoints`
 +
-image:images/lab6_7_checkpoint_2.png[] +
+image:images/lab6_7_checkpoint_1.png[] +
 
-7. Click on `org.acme.insurance.Driver` and add the fields `numberOfAccidents` and enter the value 4. Click on `org.acme.insurance.Driver` again and `numberOfDemeritPoints`. Set the value as 17.
+7. Click on pencil icon next to the `numberOfAccidents` and select `Literal` value. Do the same for `numberOfDemeritPoints`. Fill in the values 4 for `numberOfAccidents` and 17 for `numberOfDemeritPoints`.
++
+image:images/lab6_8_checkpoint_2.png[] +
 
 8. Run the test scenario by clicking on `Run scenario` button near the top of the editor window. You should see the test completed successfully, and that 1 rule was fired. Click on `Show rules fired`, and you should see that the `high-risk-driver` rule was fired.
 +
-image:images/lab6_8_checkpoint_3.png[] +
+image:images/lab6_9_checkpoint_3.png[] +
 
 9. Inspecting the rules fired is fine for adhoc tests. For automation, we should specify the expected outcome(s) of the test. Click on `+` beside `EXPECT` and add `high-risk-driver` rule.
 +
-image:images/lab6_9_add_expectation.png[] +
+image:images/lab6_10_add_expectation.png[] +
 
 10. Now, change the `numberOfDemeritPoints` to `16` and run the test scenario again. You should see a test failure:
 +
-image:images/lab6_10_test_failed.png[] +
+image:images/lab6_11_test_failed.png[] +
 +
 Take a minute to observe the outcome (error messages) of the test. 
 
 11. Change the `numberOfDemeritPoints` to `17` and `Save` the test scenario.
 
-=== 2. Too Many Demerit Points Test
+== 2. Too Many Demerit Points Test
 
 1. Now follow the steps above and create suitable test scenario for `too-many-demerit-points` rule.
 +
 TIP: You can make a copy of the `high-risk-driver-test` and modify it for `too-many-demerit-points` test.
 +
-image:images/lab6_11_demerit_points_test.png[] +
+image:images/lab6_12_demerit_points_test.png[] +
 
-=== 3. Maximum Value Test
+== 3. Maximum Value Test
 
 1. Now follow the steps above and create suitable test scenario for `maximum-value` rule.
 +
-image:images/lab6_12_max_value_test.png[] +
+image:images/lab6_13_max_value_test.png[] +
 
 Congratulations! You have successfully create test scenarios for your rules!
 

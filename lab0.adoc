@@ -51,7 +51,7 @@ image:images/lab0_6_login.png[] +
 
 NOTE: It may take a few minutes for the BPM Suite to be deployed and ready. Please be patient.
 
-Try login with the user `jboss` and password `Redhat1!`.
+Try login with the user `jboss` and password `Redhat1!`
 
 == 2. JBoss Developer Studio
 
@@ -70,7 +70,7 @@ From JBoss Developer Studio, select `Help -> Install New Software...` from the m
 
 image:images/lab0_7_integration_stack.png[] +
 
-Select `JBoss Business Process and Rules Development` tools from the avialable software and click finish.
+Select `JBoss Business Process and Rules Development` tools from the avialable software and click `Finish`.
 
 image:images/lab0_8_bpms_tooling.png[] +
 

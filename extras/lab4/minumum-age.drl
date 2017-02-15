@@ -1,0 +1,13 @@
+package org.acme.insurance.eligibility
+
+import org.acme.insurance.Driver
+import org.acme.insurance.Policy
+
+rule "minimum age"
+    when
+        p : Policy ()
+        d : Driver (this == p.driver, age < 17)
+    then
+        p.addRejection ("Driver does not meet minimum age requirement");
+
+end
