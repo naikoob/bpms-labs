@@ -25,3 +25,60 @@ image:images/lab7_1_package.png[] +
 +
 image:images/lab7_2_new_decision_tbl.png[] +
 
+3. Import the `Coverage` object
++
+image:images/lab7_3_import_coverage.png[] + 
+
+== 2. Create Conditions
+1. Switch back to `Editor` tab. Expand `Decision Table` and click on `New column`
++
+image:images/lab7_4_new_column.png[] +
+
+2. Add a simple condition
++
+image:images/lab7_5_add_condition.png[] +
+and add a `Coverage` fact
++
+image:images/lab7_6_coverage_fact.png[] +
+
+3. Add other conditions
++
+image:images/lab7_7_limit_from.png[] +
+image:images/lab7_8_limit_to.png[] +
+image:images/lab7_9_excess.png[] +
+
+== 3. Create Action
+1. Add action by selecting `Set the value of a field`
++
+image:images/lab7_10_action.png[] +
++
+And populate the action field as follow: 
++
+image:images/lab7_11_premium.png[] +
+
+2. At this point we have the columns defined.
++
+image:images/lab7_12_checkpoint.png[] +
+
+== 4. Populate Table
+1. Click on `Add row...` and populate the table as follows:
++
+image:images/lab7_13_add_rows.png[] +
+
+2. Click on `Source` tab, and you can see that each row in the decision table is translated into a DRL rule. Take a few minutes to see how the rules correspond to the decision table entries.
++
+image:images/lab7_14_source.png[] +
+
+
+== 5. Create Collision Premium Table
+
+1. Create a `Collision` premium table, with the same structure as `Comprehensive` premium table. 
++
+NOTE: While it is possible to make a copy of the Comprehensive table above, you are encouraged to create the table from scratch as a practise on the Guided Decision Table editor
+
+2. The completed table should be as follow
++
+image:images/lab7_15_collision.png[] +
+
+
+

@@ -136,7 +136,7 @@ Complete the `Policy` object with the following fields
 | basePrice | Base price | Double
 | finalPrice | Final price | Double
 |===
-
++
 When completed, the Policy object should look like this:
 +
 image:images/lab3_9_policy.png[] +

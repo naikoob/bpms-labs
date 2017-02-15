@@ -16,4 +16,3 @@
 
 ==== link:lab7.html[Lab 7 - Decision Tables]
 
-==== link:lab8.html[Lab 8 - TBD]

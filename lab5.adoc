@@ -67,11 +67,11 @@ image:images/lab5_11_conditions_done.png[]
 +
 image:images/lab5_12_action.png[] +
 
-13. Select the `addRejection` method, and `Literal value` for string parameter. Enter a rejection reason, such as `Vehicle value exceeds maximum allowed for online quote`. The completed rule should look like this:
+16. Select the `addRejection` method, and `Literal value` for string parameter. Enter a rejection reason, such as `Vehicle value exceeds maximum allowed for online quote`. The completed rule should look like this:
 +
 image:images/lab5_13_completed.png[] +
 
-14. Click on the `Source` tab, and you'll see that the generated source is actually a DRL.
+17. Click on the `Source` tab, and you'll see that the generated source is actually a DRL.
 +
 image:images/lab5_14_source.png[] +
 
