@@ -81,4 +81,11 @@ NOTE: While it is possible to make a copy of the Comprehensive table above, you 
 image:images/lab7_15_collision.png[] +
 
 
+== 6. Create Test Scenario
+
+1. Make use of what we've learn from previous labs to create a test scenario for the Comprehensive Base Premium rule. The completed test scenario should be similar to the one shown below:
++
+image:images/lab7_16_test_scenario.png[] +
+
+
 
