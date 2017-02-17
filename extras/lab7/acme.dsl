@@ -10,7 +10,7 @@
 [condition][driver]- has more than {number} years of driving experience=drivingExperience >= {number}
 
 [condition][vehicle]There is a Vehicle=vehicle : Vehicle()
-[condition][vehicle]- is equipped with daytime running light=hasDaytimeRunningLights == True
+[condition][vehicle]- is equipped with daytime running light=hasDaytimeRunningLights
 [condition][vehicle]- annual mileage is more then {number}=annualMileage >= {number}
 
 [condition][policy]There is a Policy=policy : Policy()
