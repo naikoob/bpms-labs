@@ -29,33 +29,29 @@ image:images/lab6_4_new_input_2.png[] +
 +
 image:images/lab6_5_add_driver.png[] +
 
-5. Click on the pencil icon next to `driver` and select `Bound Variable` in the pop-up, and bind the to `=driver`
-+
-image:images/lab6_6_bound_variable.png[] +
-
-6. Now we add constraints to the `driver` object. Click on `Insert Driver` and add the fields `numberOfAccidents` and `numberOfDemeritPoints`
+5. Now we add constraints to the `driver` object. Click on `Insert Driver` and add the fields `numberOfAccidents` and `numberOfDemeritPoints`
 +
 image:images/lab6_7_checkpoint_1.png[] +
 
-7. Click on pencil icon next to the `numberOfAccidents` and select `Literal` value. Do the same for `numberOfDemeritPoints`. Fill in the values 4 for `numberOfAccidents` and 17 for `numberOfDemeritPoints`.
+6. Click on pencil icon next to the `numberOfAccidents` and select `Literal` value. Do the same for `numberOfDemeritPoints`. Fill in the values 4 for `numberOfAccidents` and 17 for `numberOfDemeritPoints`.
 +
 image:images/lab6_8_checkpoint_2.png[] +
 
-8. Run the test scenario by clicking on `Run scenario` button near the top of the editor window. You should see the test completed successfully, and that 1 rule was fired. Click on `Show rules fired`, and you should see that the `high-risk-driver` rule was fired.
+7. Run the test scenario by clicking on `Run scenario` button near the top of the editor window. You should see the test completed successfully, and that 1 rule was fired. Click on `Show rules fired`, and you should see that the `high-risk-driver` rule was fired.
 +
 image:images/lab6_9_checkpoint_3.png[] +
 
-9. Inspecting the rules fired is fine for adhoc tests. For automation, we should specify the expected outcome(s) of the test. Click on `+` beside `EXPECT` and add `high-risk-driver` rule.
+8. Inspecting the rules fired is fine for adhoc tests. For automation, we should specify the expected outcome(s) of the test. Click on `+` beside `EXPECT` and add `high-risk-driver` rule.
 +
 image:images/lab6_10_add_expectation.png[] +
 
-10. Now, change the `numberOfDemeritPoints` to `16` and run the test scenario again. You should see a test failure:
+9. Now, change the `numberOfDemeritPoints` to `16` and run the test scenario again. You should see a test failure:
 +
 image:images/lab6_11_test_failed.png[] +
 +
 Take a minute to observe the outcome (error messages) of the test. 
 
-11. Change the `numberOfDemeritPoints` to `17` and `Save` the test scenario.
+10. Change the `numberOfDemeritPoints` to `17` and `Save` the test scenario.
 
 == 2. Too Many Demerit Points Test
 

@@ -43,35 +43,27 @@ image:images/lab5_7_add_vehicle.png[] +
 
 9. Click on `There is a Vehicle` and set the variable name to `vehicle`, and click `Set`.
 
-10. Click on `There is a Vehicle` again and link `this` vehicle to the policy's vehicle. Do this by select `this`
-+
-image:images/lab5_8_link_vehicle.png[] +
-
-11. Complete the expression to link the vehicle to the policy's vehicle
-+ 
-image:images/lab5_9_link_vehicle_2.png[] +
-
-12. Now we want to access the `marketValue` field of the `vehicle`. To do that, click on `This is a Vehicle` in the guided rule editor. In the resulting pop-up, click on `Show sub fields` and select `marketValue`.
+10. Now we want to access the `marketValue` field of the `vehicle`. To do that, click on `This is a Vehicle` in the guided rule editor. In the resulting pop-up, click on `Show sub fields` and select `marketValue`.
 +
 The rule editor now look like this:
 +
 image:images/lab5_10_guided_rule_partial.png[] 
 
-13. Click on the drop down next to marketValue and select `greater than`.
+11. Click on the drop down next to marketValue and select `greater than`.
 
-14. Click on the pencil icon next to `greater than` and select `Literal Value`. A small text box now appears in place of the icon. Enter the value `5000000` in the text box.
+12. Click on the pencil icon next to `greater than` and select `Literal Value`. A small text box now appears in place of the icon. Enter the value `5000000` in the text box.
 +
 image:images/lab5_11_conditions_done.png[] 
 
-15. Click on the `+` icon to the right of `Then`, and select `Call method on policy...`
+13. Click on the `+` icon to the right of `Then`, and select `Call method on policy...`
 +
 image:images/lab5_12_action.png[] +
 
-16. Select the `addRejection` method, and `Literal value` for string parameter. Enter a rejection reason, such as `Vehicle value exceeds maximum allowed for online quote`. The completed rule should look like this:
+14. Select the `addRejection` method, and `Literal value` for string parameter. Enter a rejection reason, such as `Vehicle value exceeds maximum allowed for online quote`. The completed rule should look like this:
 +
 image:images/lab5_13_completed.png[] +
 
-17. Click on the `Source` tab, and you'll see that the generated source is actually a DRL.
+15. Click on the `Source` tab, and you'll see that the generated source is actually a DRL.
 +
 image:images/lab5_14_source.png[] +
 

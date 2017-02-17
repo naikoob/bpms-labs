@@ -124,8 +124,8 @@ image:images/lab3_8_additional_drivers.png[] +
 |===
 | Identifier | Label | Type
 | coverages | List of coverages | org.acme.insurance.Coverage [List]
-| rejection | List of rejections | org.acme.insurance.Rejection [List]
-| adjustment | List of adjustments | org.acme.insurance.Adjustment [List]
+| rejections | List of rejections | org.acme.insurance.Rejection [List]
+| adjustments | List of adjustments | org.acme.insurance.Adjustment [List]
 |===
 +
 Complete the `Policy` object with the following fields
