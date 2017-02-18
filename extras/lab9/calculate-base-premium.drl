@@ -1,0 +1,21 @@
+package org.acme.insurance.policyquote;
+
+import org.acme.insurance.Coverage;
+import org.acme.insurance.Policy;
+
+rule "Calculate Base Premium"
+
+    salience -10
+
+    when
+        policy: Policy()
+        totalPrice: Double( intValue > 0 )
+            from accumulate ( Coverage( price : premium ),
+                init ( double total = 0; ),
+                action ( total += price; ),
+                reverse ( total -= price; ),
+                result ( total ))  
+    then
+        System.out.println("Calculate Base Premium:  setting base price to: "+  totalPrice);
+        modify(policy) { setBasePrice (totalPrice) }
+end
