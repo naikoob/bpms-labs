@@ -25,7 +25,7 @@ A DSL mapping file was prepared for you, so you can import this into your projec
 
 5. Click `Ok`.
 
-6. Copy the contents of the link:extras/lab7/acme.dsl[`acme.dsl`] and paste it into the DSL editor pane.
+6. Copy the contents of the link:extras/lab8/acme.dsl[`acme.dsl`] and paste it into the DSL editor pane.
 
 7. Examine the DSL mappings.
 
@@ -57,7 +57,7 @@ Now, we will use the DSL to write some rules to get discounts or add surcharges.
 +
 image:images/lab8_1_import.png[] +
 
-4. Click on `+` on the `when` line to add condition. Notice that now there a more choices
+4. Click on `+` on the `when` line to add condition. Notice that now there are more choices
 +
 image:images/lab8_2_conditions_dsl.png[] +
 
