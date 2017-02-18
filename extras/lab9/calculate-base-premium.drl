@@ -9,7 +9,7 @@ rule "Calculate Base Premium"
 
     when
         policy: Policy()
-        totalPrice: Double( intValue > 0 )
+        totalPrice: Double()
             from accumulate ( Coverage( price : premium ),
                 init ( double total = 0; ),
                 action ( total += price; ),
@@ -17,5 +17,5 @@ rule "Calculate Base Premium"
                 result ( total ))  
     then
         System.out.println("Calculate Base Premium:  setting base price to: "+  totalPrice);
-        modify(policy) { setBasePrice (totalPrice) }
+        policy.setBasePrice(totalPrice);
 end
