@@ -18,3 +18,7 @@
 
 ==== link:lab8.html[Lab 8 - DSL]
 
+==== link:lab9.html[Lab 9 - Advanced Rule]
+
+==== link:lab10.html[Lab 10 - Ruleflows]
+
