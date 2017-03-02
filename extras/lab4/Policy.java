@@ -133,25 +133,29 @@ public class Policy implements java.io.Serializable {
 		return builder.toString();
 	}
 
-	public void addRejection(String reason) {
+	public Rejection addRejection(String reason) {
 		if (null == rejections) {
 			rejections = new ArrayList<Rejection>();
 		}
-		rejections.add(new Rejection(reason));
+		Rejection r = new Rejection(reason);
+		rejections.add(r);
+		return r;
 	}
 	
-	public void addDiscount(String unit, Double amount, String description) {
-		addAdjustment("discount", unit, amount, description);
+	public Adjustment addDiscount(String unit, Double amount, String description) {
+		return addAdjustment("discount", unit, amount, description);
 	}
 
-	public void addSurcharge(String unit, Double amount, String description) {
-		addAdjustment("surcharge", unit, amount, description);
+	public Adjustment addSurcharge(String unit, Double amount, String description) {
+		return addAdjustment("surcharge", unit, amount, description);
 	}
 	
-	public void addAdjustment(String type, String unit, Double amount, String description) {
+	public Adjustment addAdjustment(String type, String unit, Double amount, String description) {
 		if (null == adjustments) {
 			adjustments = new ArrayList<Adjustment>();
 		}
-		adjustments.add(new Adjustment(type, unit, amount, description));
+		Adjustment adj = new Adjustment(type, unit, amount, description);
+		adjustments.add(adj);
+		return adj;
 	}
 }

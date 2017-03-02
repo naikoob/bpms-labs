@@ -8,6 +8,6 @@ rule "too many accidents"
         p : Policy ()
         d : Driver (this == p.driver, numberOfAccidents > 5)
     then
-        p.addRejection ("Driver has too many accidents");
+        insert ( p.addRejection ("Driver has too many accidents") );
 
 end

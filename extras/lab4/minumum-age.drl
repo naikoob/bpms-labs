@@ -8,6 +8,6 @@ rule "minimum age"
         p : Policy ()
         d : Driver (this == p.driver, age < 17)
     then
-        p.addRejection ("Driver does not meet minimum age requirement");
+        insert ( p.addRejection ("Driver does not meet minimum age requirement") );
 
 end

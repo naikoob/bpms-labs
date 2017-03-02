@@ -8,6 +8,6 @@ rule "high mileage"
         p : Policy ()
         v : Vehicle (this == p.vehicle, annualMileage > 120000)
     then
-        p.addRejection ("Vehicle annual mileage exceeded maximum allowed");
+        insert( p.addRejection ("Vehicle annual mileage exceeded maximum allowed") );
 
 end

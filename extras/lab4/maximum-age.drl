@@ -8,6 +8,6 @@ rule "maximum age"
         p : Policy ()
         d : Driver (this == p.driver, age > 96)
     then
-        p.addRejection ("Driver exceeded maximum age limit");
+        insert ( p.addRejection ("Driver exceeded maximum age limit") );
 
 end
